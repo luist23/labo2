@@ -13,13 +13,14 @@ import java.util.Scanner;
  * @author LuisT23
  */
 public class ListaUsers {
+
     private ArrayList<Users> users;
-    
-    public ListaUsers(){
+
+    public ListaUsers() {
         users = new ArrayList<>();
     }
-    
-    public void add(){
+
+    public void add() {
         Users user = new Users();
         users.add(user);
         Scanner leer = new Scanner(System.in);
@@ -27,33 +28,33 @@ public class ListaUsers {
         user.setUser(leer.nextLine());
         System.out.println("ingrese la contraseña a usar: ");
         user.setPassword(leer.nextLine());
-        
+
     }
-    
-    public boolean acceder(){
+
+    public void addAdmind(String nombre, String password) {
+        Users user = new Users();
+        users.add(user);
+        user.setUser(nombre);
+        user.setPassword(password);
+    }
+
+    public boolean acceder() {
         System.out.println("ingrese nombre de usuario: ");
         Scanner leer = new Scanner(System.in);
-        for ( Users u : users ){
-            if ((u.getUser())==(leer.nextLine())){
+        for (Users u : users) {
+            if ((u.getUser()) == (leer.nextLine())) {
                 System.out.println("ingrese contraseña:");
-                while (u.getPassword() != leer.nextLine()){
+                while (u.getPassword() != leer.nextLine()) {
                     System.out.println("contarseeña incorrecta: ");
                     System.out.println("intentar nueamente? S/N");
-                    if (leer.nextLine()== "N"){
+                    if (leer.nextLine() == "N") {
                         return false;
                     }
                 }
                 return true;
             }
         }
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-}
 
+    }
+
+}

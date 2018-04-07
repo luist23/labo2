@@ -10,29 +10,32 @@ package inventario;
  * @author LuisT23
  */
 public class Users {
+
     private String User;
     private String Password;
-    
-    public Users(){
+
+    public Users() {
     }
-    
-    public void setUser(String newUser){
+
+    public void setUser(String newUser) {
         User = newUser;
     }
-    private void setNewPassword(String Password){
+
+    private void setNewPassword(String Password) {
         this.Password = Password;
     }
-    public void setPassword(String newPassword){
-        
+
+    public void setPassword(String newPassword) {
+
         Password = newPassword;
     }
-    public String getUser(){
+
+    public String getUser() {
         return User;
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return Password;
     }
-    
-    
-    
+
 }

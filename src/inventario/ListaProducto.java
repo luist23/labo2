@@ -77,15 +77,16 @@ public class ListaProducto {
     public void cargarProducto(Producto producto, int carga) {
         producto.Existencia += carga;
     }
-    
-    public void mostrar(){
-        for (Producto u: productos){
+
+    public void mostrar() {
+        for (Producto u : productos) {
             u.mostrarExistencia();
         }
     }
-    public Producto buscarProducto(String nombreProducto){
-        for (Producto u : productos){
-            if (u.Nombre==nombreProducto){
+
+    public Producto buscarProducto(String nombreProducto) {
+        for (Producto u : productos) {
+            if (u.Nombre == nombreProducto) {
                 return u;
             }
         }

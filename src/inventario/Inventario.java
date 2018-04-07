@@ -16,6 +16,10 @@ public class Inventario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ListaProducto lista = new ListaProducto();
+        ListaUsers Usuarios = new ListaUsers();
+        Usuarios.addAdmind("admin", "1234");
+        Menu menu = new(Menu);
     }
-    
+
 }
