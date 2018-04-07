@@ -24,13 +24,36 @@ public class FacturaVenta {
         cantidadProducto=0;
     }
     
-    public void add(){
-        Producto producto = new Producto();
+    public void add(Producto producto){
         productos.add(producto);
-        Scanner leer = new Scanner(System.in);
     }
     
-    public void descargar(){
+    public void descargar(ListaProducto lista){
+        System.out.println("ingrese producto a vender: ");
+        Scanner leer = new Scanner(System.in);
+        String productoVendido = leer.nextLine();
+        Producto newVenta=lista.buscarProducto(productoVendido);
+        String flag;
+        if (newVenta==null){
+            System.out.println("desea continuar S/N");
+            flag=leer.next();
+            if (flag=="N" || flag=="n"){
+                return;
+            }
+            descargar(lista);
+        }else{
+            System.out.println("ingrese total de producto avender: ");
+            int total =lista.descargarProdcuto(newVenta, leer.nextInt());
+            ventaTotal +=total * newVenta.Precio;
+            cantidadProducto +=total;
+            System.out.println("desea continuar S/N");
+            flag=leer.next();
+            if (flag=="N" || flag=="n"){
+                return;
+            }
+            descargar(lista);
+        }
+        
         
     }
     

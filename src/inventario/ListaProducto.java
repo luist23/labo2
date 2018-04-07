@@ -89,6 +89,8 @@ public class ListaProducto {
                 return u;
             }
         }
+        System.out.println("el producto no fue encontardo");
+        return null;
     }
 
 }
