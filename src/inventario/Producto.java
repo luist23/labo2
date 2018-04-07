@@ -15,6 +15,11 @@ public class Producto {
     public int Precio;
     public int Existencia;
     
+    public void producto(){
+        Precio=0;
+        Existencia=0;
+    }
+    
     public void mostrarExistencia(){
         System.out.println(Nombre + "   Existen " + Existencia + "  Precio: "  + Precio);
     }
